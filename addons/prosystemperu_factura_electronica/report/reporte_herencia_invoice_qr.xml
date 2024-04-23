@@ -1,0 +1,35 @@
+<odoo>
+  <data>
+  	<template id="reporte_invoice_documento_herencia" inherit_id="account.report_invoice_document">
+      <xpath expr="//div[@id='total']" position="inside">
+        <div class="col-xs-6 pull-left">
+          <strong>SON: <span t-field="o.monto_letras"/> <span t-field="o.currency_id.descripcion"/></strong>
+        </div>                
+      </xpath>
+      <p t-if="o.comment" position="before">
+          <div class="row">
+            <div class="col-xs-6" style="font-size: 20px">                          
+              <img t-if="o.imagen_qr" t-att-src="'data:image/png;base64,%s' % to_text(o.imagen_qr)" class="pull-left" style="width: 150px; height: 150px"/>
+            </div>
+            <br/>            
+          </div>
+      </p>
+
+      <xpath expr="//h2" position="replace">
+        <h2>
+          <span t-if="o.type == 'out_invoice' and (o.state == 'open' or o.state == 'paid') and o.tipo_doc == 'FAC'">Factura</span>
+          <span t-if="o.type == 'out_invoice' and (o.state == 'open' or o.state == 'paid') and o.tipo_doc == 'BOL'">Boleta de venta</span>
+          <span t-if="o.type == 'out_invoice' and o.state == 'draft'">Draft Invoice</span>
+          <span t-if="o.type == 'out_invoice' and o.state == 'draft' and o.tipo_doc == 'BOL'">Boleta de venta Borrador</span>
+          <span t-if="o.type == 'out_invoice' and o.state == 'cancel'">Factura o Boleta de venta Cancelada</span>
+          <span t-if="o.type == 'out_refund'">Credit Note</span>
+          <span t-if="o.type == 'in_refund'">Vendor Credit Note</span>
+          <span t-if="o.type == 'in_invoice'">Vendor Bill</span>
+          <span t-field="o.serie"/>-<span t-field="o.numeracion"/>
+        </h2>
+                       
+      </xpath>
+    </template>
+    
+  </data>
+</odoo>

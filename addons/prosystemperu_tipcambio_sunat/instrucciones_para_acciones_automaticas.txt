@@ -1,0 +1,7 @@
+#codigo para ejecutar automaticamente el tipo de cambio este va en el modelo ir.cron
+------------------------------------------------------------------
+#en el campo state seleccionamos Ejecutar el codigo python
+#y se va activar o aparecer un campo text y dentro de el agregos el siguiente codigo:
+
+obj = env['res.currency'].browse(3)
+obj.data_actualiza()

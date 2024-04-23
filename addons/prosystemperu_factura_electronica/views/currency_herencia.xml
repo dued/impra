@@ -1,0 +1,37 @@
+<odoo>
+  <data>
+
+    <!--<record id="ver_factura_ventas_herencia_tree" model="ir.ui.view">
+      <field name="name">factura.herencia.tree</field>
+      <field name="model">account.invoice</field>
+      <field name="inherit_id" ref="account.invoice_tree"/>
+        <field name="arch" type="xml">
+          <field name="number" position="after">
+                <field name="tipo_doc" string="Tip. Doc"/>
+                <field name="serie"  string="Serie"/>
+                <field name="numeracion" string="Número"/>
+            </field>
+          <field name="number" position="attributes">
+            <attribute name="invisible">1</attribute>
+          </field>
+          
+        </field>
+    </record>-->
+
+
+    <record id="ver_moneda_herencia_form" model="ir.ui.view">
+        <field name="name">res.currency.form</field>
+        <field name="model">res.currency</field>
+        <field name="inherit_id" ref="base.view_currency_form"/>       
+        <field name="arch" type="xml">                  
+
+          <field name="name" position="after">
+            <field name="descripcion" string="Descripción"/>                     
+          </field> 
+                   
+        </field>
+    </record>
+
+
+  </data>
+</odoo>

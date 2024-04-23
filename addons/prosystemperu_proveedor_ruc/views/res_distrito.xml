@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!--provincia-->
+        <record id="view_distrito_tree" model="ir.ui.view">
+            <field name="name">res.distrito.tree</field>
+            <field name="model">res.distrito</field>
+            <field name="arch" type="xml">
+                <tree string="Distrito">
+                    <field name="name" string=" Nombre Distrito"/>
+                    <field name="code" string="Código Distrito"/>
+                    <field name="provincia_id" string="Provincia"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_distrito_form" model="ir.ui.view">
+            <field name="name">res.distrito.form</field>
+            <field name="model">res.distrito</field>
+            <field name="arch" type="xml">
+                <form>                    
+                    <group>
+                        <group>                            
+                            <field name="name" string="Nombre Distrito"/>                            
+                            <field name="code" string="Código Distrito"/>
+                            <field name="provincia_id" string="Provincia" options='{"no_open": True}'/>
+                            <field name="company_id" string="Compañia" groups="base.group_multi_company" options="{'no_create': True}"/>
+                        </group>
+                        
+                    </group>
+                    
+                </form>
+            </field>
+        </record>
+
+        <!--<record id="action_distrito" model="ir.actions.act_window">
+            <field name="name">Distrito</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">res.distrito</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                  Click Para crear Una Distrito.
+                </p>
+            </field>
+        </record>
+
+        <menuitem id="action_distrito_menu_action" name="Distrito" parent="purchase.menu_procurement_management" sequence="0" action="action_distrito"/>-->
+
+
+       
+
+        
+
+
+    </data>
+</odoo>

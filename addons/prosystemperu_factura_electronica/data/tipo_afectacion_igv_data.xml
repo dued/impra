@@ -1,0 +1,111 @@
+<odoo>
+    <data noupdate="1">
+        <record id="tipo_igv_10" model="tipo.afectacion.igv">
+            <field name="codigo">10</field>            
+            <field name="name">Gravado-Operación Onerosa</field>
+            <field name="cod_tip_tributo" ref="cod_tip_trib_1000"/>            
+        </record>
+        <record id="tipo_igv_11" model="tipo.afectacion.igv">
+            <field name="codigo">11</field>            
+            <field name="name">Gravado-Retiro por premio</field>
+            <field name="cod_tip_tributo" ref="cod_tip_trib_9996"/>             
+        </record>
+        <record id="tipo_igv_12" model="tipo.afectacion.igv">
+            <field name="codigo">12</field>            
+            <field name="name">Gravado-Retiro por donación</field>
+            <field name="cod_tip_tributo" ref="cod_tip_trib_9996"/>           
+        </record>
+        <record id="tipo_igv_13" model="tipo.afectacion.igv">
+            <field name="codigo">13</field>            
+            <field name="name">Gravado-Retiro</field> 
+            <field name="cod_tip_tributo" ref="cod_tip_trib_9996"/>           
+        </record>
+        <record id="tipo_igv_14" model="tipo.afectacion.igv">
+            <field name="codigo">14</field>            
+            <field name="name">Gravado-Retiro por publicidad</field> 
+            <field name="cod_tip_tributo" ref="cod_tip_trib_9996"/>        
+        </record>
+        <record id="tipo_igv_15" model="tipo.afectacion.igv">
+            <field name="codigo">15</field>            
+            <field name="name">Gravado-Bonificaciones</field>
+            <field name="cod_tip_tributo" ref="cod_tip_trib_9996"/>            
+        </record>
+        <record id="tipo_igv_16" model="tipo.afectacion.igv">
+            <field name="codigo">16</field>            
+            <field name="name">Gravado-Retiro por entrega a trabajadores</field>
+            <field name="cod_tip_tributo" ref="cod_tip_trib_9996"/>            
+        </record>
+        <record id="tipo_igv_171" model="tipo.afectacion.igv">
+            <field name="codigo">171</field>            
+            <field name="name">Gravado-IVAP</field>
+            <field name="cod_tip_tributo" ref="cod_tip_trib_1016"/>          
+        </record>
+        <record id="tipo_igv_172" model="tipo.afectacion.igv">
+            <field name="codigo">172</field>            
+            <field name="name">Gravado-IVAP [Gratuito]</field>
+            <field name="cod_tip_tributo" ref="cod_tip_trib_9996"/>          
+        </record>
+        <record id="tipo_igv_20" model="tipo.afectacion.igv">
+            <field name="codigo">20</field>            
+            <field name="name">Exonerado-Operación Onerosa</field>
+            <field name="cod_tip_tributo" ref="cod_tip_trib_9997"/>            
+        </record>
+        <record id="tipo_igv_21" model="tipo.afectacion.igv">
+            <field name="codigo">21</field>            
+            <field name="name">Exonerado-Transferencia Gratuita</field>
+            <field name="cod_tip_tributo" ref="cod_tip_trib_9996"/>            
+        </record>
+        <record id="tipo_igv_30" model="tipo.afectacion.igv">
+            <field name="codigo">30</field>            
+            <field name="name">Inafecto-Operacion Onerosa</field>
+            <field name="cod_tip_tributo" ref="cod_tip_trib_9998"/>            
+        </record>
+        <record id="tipo_igv_31" model="tipo.afectacion.igv">
+            <field name="codigo">31</field>            
+            <field name="name">Inafecto-Retiro por Bonificación</field>
+            <field name="cod_tip_tributo" ref="cod_tip_trib_9996"/>            
+        </record>
+        <record id="tipo_igv_32" model="tipo.afectacion.igv">
+            <field name="codigo">32</field>            
+            <field name="name">Inafecto-Retiro</field>
+            <field name="cod_tip_tributo" ref="cod_tip_trib_9996"/>            
+        </record>
+        <record id="tipo_igv_33" model="tipo.afectacion.igv">
+            <field name="codigo">33</field>            
+            <field name="name">Inafecto-Retiro por Muestras Médicas</field>
+            <field name="cod_tip_tributo" ref="cod_tip_trib_9996"/>            
+        </record>
+        <record id="tipo_igv_34" model="tipo.afectacion.igv">
+            <field name="codigo">34</field>            
+            <field name="name">Inafecto-Retiro por Convenio Colectivo</field>
+            <field name="cod_tip_tributo" ref="cod_tip_trib_9996"/>            
+        </record>
+        <record id="tipo_igv_35" model="tipo.afectacion.igv">
+            <field name="codigo">35</field>            
+            <field name="name">Inafecto-Retiro por premio</field>
+            <field name="cod_tip_tributo" ref="cod_tip_trib_9996"/>            
+        </record>
+        <record id="tipo_igv_36" model="tipo.afectacion.igv">
+            <field name="codigo">36</field>            
+            <field name="name">Inafecto-Retiro por publicidad</field>
+            <field name="cod_tip_tributo" ref="cod_tip_trib_9996"/>            
+        </record>
+        <record id="tipo_igv_37" model="tipo.afectacion.igv">
+            <field name="codigo">36</field>            
+            <field name="name">Inafecto-Transferencia gratuita</field>
+            <field name="cod_tip_tributo" ref="cod_tip_trib_9996"/>            
+        </record>
+        <record id="tipo_igv_401" model="tipo.afectacion.igv">
+            <field name="codigo">401</field>            
+            <field name="name">Exportación de Bienes o Servicios</field>
+            <field name="cod_tip_tributo" ref="cod_tip_trib_9995"/>            
+        </record>
+        <record id="tipo_igv_402" model="tipo.afectacion.igv">
+            <field name="codigo">402</field>            
+            <field name="name">Exportación de Bienes o Servicios [Gratuito]</field>
+            <field name="cod_tip_tributo" ref="cod_tip_trib_9996"/>            
+        </record>
+        
+        
+    </data>
+</odoo>

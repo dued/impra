@@ -1,0 +1,26 @@
+<odoo>
+    <data noupdate="1">
+        <record id="debi_mot_1" model="debito.motivo">
+            <field name="codigo">01</field>            
+            <field name="name">Interes por mora</field>            
+        </record>
+        <record id="debi_mot_2" model="debito.motivo">
+            <field name="codigo">02</field>            
+            <field name="name">Aumento de valor</field>            
+        </record>
+        <record id="debi_mot_3" model="debito.motivo">
+            <field name="codigo">03</field>            
+            <field name="name">Penalidades/otros conceptos</field>            
+        </record>
+        <record id="debi_mot_11" model="debito.motivo">
+            <field name="codigo">11</field>            
+            <field name="name">Ajuste de operaciones de exportación</field>            
+        </record>
+        <record id="debi_mot_12" model="debito.motivo">
+            <field name="codigo">12</field>            
+            <field name="name">Ajuste afecto al IVAP</field>            
+        </record>      
+        
+        
+    </data>
+</odoo>

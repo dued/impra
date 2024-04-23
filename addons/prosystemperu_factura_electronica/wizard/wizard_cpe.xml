@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="wizard_cpe_form" model="ir.ui.view">
+        <field name="name" >Agrega Cpe</field>
+        <field name="model" >wizard.cpe</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                <group name="group_top" >
+                    <group name="group_left">
+                      <field name="fecha_consulta" string='Seleccione Fecha' required="1" readonly='1' force_save="1"></field>                        
+                    </group>                                      
+                </group>
+
+                <notebook>
+                <page string="Facturas" name="whiteboard">
+                  <field name="detalle_cpe" mode="tree,kanban">
+                    <tree string="Facturas que desea dar de bajas" editable="bottom" create="false" delete="false">
+                        <field name="capturar" string='Seleccione'></field>
+                        <field name="item" string='Item' readonly='1' force_save="1"></field>
+                        <field name="id_doc" string='Factura' options="{'no_create': True, 'no_open': True}" readonly='1' force_save="1"></field>
+                        <field name="tipo_doc" string='Tip. doc' readonly='1' force_save="1"></field>
+                        <field name="serie_doc" string='Serie' readonly='1' force_save="1"></field>
+                        <field name="numeracion_doc" string='Numeración' readonly='1' force_save="1"></field>                                     
+                    </tree>
+                  </field>                                            
+                </page>                         
+                </notebook>   
+                
+                <footer>
+                    <button name='enviar_registro' string='Enviar registro' class='oe_highlight' type='object'/>                      
+                    <span class="or_cancel" > o <button special="cancel" string="Cerrar" type="object" class="oe_highlight" icon="fa-close"/>
+                    </span>
+               </footer>
+               </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_wizard_cpe" model="ir.actions.act_window">
+        <field name="name">Agrega CPE</field>
+        <field name="res_model">wizard.cpe</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="wizard_cpe_form"/>
+        <field name="target">new</field>
+    </record>   
+
+
+</odoo>

@@ -1,0 +1,17 @@
+<odoo>
+  <data>
+    <record id="account_journal_herencia_form" model="ir.ui.view">
+      <field name="name">account.journal.form</field>
+      <field name="model">account.journal</field>
+      <field name="inherit_id" ref="account.view_account_journal_form"/>
+      <field name="arch" type="xml">
+        <field name="type" position="after">
+          <field name="direccion" string="Dirección"/>
+          <field name="state_id" string="Departamento" options='{"no_open": True, "no_create": True}'/>
+          <field name="provincia_id" string="Provincia" domain="[('departamento_id','=',state_id)]" options='{"no_open": True, "no_create": True}'/>
+          <field name="distrito_id" string="Distrito" domain="[('provincia_id','=',provincia_id)]" options='{"no_open": True, "no_create": True}'/>                
+        </field>
+      </field>
+    </record>
+  </data>
+</odoo>

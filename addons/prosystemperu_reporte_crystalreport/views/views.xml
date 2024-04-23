@@ -1,0 +1,81 @@
+<odoo>
+  <data>
+    <record id="reporte_crystalreport_form" model="ir.ui.view">
+      <field name="name">reporte.crystalreport.form</field>
+      <field name="model">reporte.crystalreport</field>
+        <field name="arch" type="xml">
+          <form string="Formulario" version="10.0">
+            <!-- Cuerpo -->
+            <sheet>
+            <group>
+              <field name="txt_filename" invisible="1"/>
+                <field name="txt_binary" filename="txt_filename" readonly="1" string="Descargar Archivo"/>              
+            </group>
+            <footer>                                           
+              <span class="or_cancel">
+                <button special="cancel" string="Salir" type="object" class="oe_highlight"/>
+             </span>
+            </footer>
+            </sheet>
+          </form>
+        </field>
+    </record>
+
+
+
+    <!-- explicit list view definition -->
+    <!--
+    <record model="ir.ui.view" id="nombremodulo.list">
+      <field name="name">nombremodulo list</field>
+      <field name="model">nombremodulo.nombremodulo</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="txt_filename" invisible="1"/>
+          <field name="txt_binary" filename="txt_filename" readonly="1" string="Download xls"/> 
+        </tree>
+      </field>
+    </record>
+    -->
+
+    <!-- actions opening views on models -->
+    <!--
+    <record model="ir.actions.act_window" id="nombremodulo.action_window">
+      <field name="name">nombremodulo window</field>
+      <field name="res_model">nombremodulo.nombremodulo</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+    -->
+
+    <!-- server action to the one above -->
+    <!--
+    <record model="ir.actions.server" id="nombremodulo.action_server">
+      <field name="name">nombremodulo server</field>
+      <field name="model_id" ref="model_nombremodulo_nombremodulo"/>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": self._name,
+        }
+      </field>
+    </record>
+    -->
+
+    <!-- Top menu item -->
+    <!--
+    <menuitem name="nombremodulo" id="nombremodulo.menu_root"/>
+    -->
+    <!-- menu categories -->
+    <!--
+    <menuitem name="Menu 1" id="nombremodulo.menu_1" parent="nombremodulo.menu_root"/>
+    <menuitem name="Menu 2" id="nombremodulo.menu_2" parent="nombremodulo.menu_root"/>
+    -->
+    <!-- actions -->
+    <!--
+    <menuitem name="List" id="nombremodulo.menu_1_list" parent="nombremodulo.menu_1"
+              action="nombremodulo.action_window"/>
+    <menuitem name="Server to list" id="nombremodulo" parent="nombremodulo.menu_2"
+              action="nombremodulo.action_server"/>
+    -->
+  </data>
+</odoo>

@@ -1,0 +1,131 @@
+<odoo>
+    <data noupdate="1">
+        <record id="departamentos_1" model="res.country.state">
+            <field name="country_id">173</field>
+            <field name="name">AMAZONAS</field>
+            <field name="code">AMAZONAS</field>            
+        </record>
+        <record id="departamentos_2" model="res.country.state">
+            <field name="country_id">173</field>
+            <field name="name">ANCASH</field>
+            <field name="code">ANCASH</field>            
+        </record>
+        <record id="departamentos_3" model="res.country.state">
+            <field name="country_id">173</field>
+            <field name="name">APURIMAC</field>
+            <field name="code">APURIMAC</field>            
+        </record>
+        <record id="departamentos_4" model="res.country.state">
+            <field name="country_id">173</field>
+            <field name="name">AREQUIPA</field>
+            <field name="code">AREQUIPA</field>            
+        </record>
+        <record id="departamentos_5" model="res.country.state">
+            <field name="country_id">173</field>
+            <field name="name">AYACUCHO</field>
+            <field name="code">AYACUCHO</field>            
+        </record>
+        <record id="departamentos_6" model="res.country.state">
+            <field name="country_id">173</field>
+            <field name="name">CAJAMARCA</field>
+            <field name="code">CAJAMARCA</field>            
+        </record>
+        <record id="departamentos_7" model="res.country.state">
+            <field name="country_id">173</field>
+            <field name="name">PROV. CONST. DEL CALLAO</field>
+            <field name="code">PROV. CONST. DEL CALLAO</field>            
+        </record>
+        <record id="departamentos_8" model="res.country.state">
+            <field name="country_id">173</field>
+            <field name="name">CUSCO</field>
+            <field name="code">CUSCO</field>            
+        </record>
+        <record id="departamentos_9" model="res.country.state">
+            <field name="country_id">173</field>
+            <field name="name">HUANCAVELICA</field>
+            <field name="code">HUANCAVELICA</field>            
+        </record>
+        <record id="departamentos_10" model="res.country.state">
+            <field name="country_id">173</field>
+            <field name="name">HUANUCO</field>
+            <field name="code">HUANUCO</field>            
+        </record>
+        <record id="departamentos_11" model="res.country.state">
+            <field name="country_id">173</field>
+            <field name="name">ICA</field>
+            <field name="code">ICA</field>            
+        </record>
+        <record id="departamentos_12" model="res.country.state">
+            <field name="country_id">173</field>
+            <field name="name">JUNIN</field>
+            <field name="code">JUNIN</field>            
+        </record>
+        <record id="departamentos_13" model="res.country.state">
+            <field name="country_id">173</field>
+            <field name="name">LA LIBERTAD</field>
+            <field name="code">LA LIBERTAD</field>            
+        </record>
+        <record id="departamentos_14" model="res.country.state">
+            <field name="country_id">173</field>
+            <field name="name">LAMBAYEQUE</field>
+            <field name="code">LAMBAYEQUE</field>            
+        </record>
+        <record id="departamentos_15" model="res.country.state">
+            <field name="country_id">173</field>
+            <field name="name">LIMA</field>
+            <field name="code">LIMA</field>            
+        </record>
+        <record id="departamentos_16" model="res.country.state">
+            <field name="country_id">173</field>
+            <field name="name">LORETO</field>
+            <field name="code">LORETO</field>            
+        </record>
+        <record id="departamentos_17" model="res.country.state">
+            <field name="country_id">173</field>
+            <field name="name">MADRE DE DIOS</field>
+            <field name="code">MADRE DE DIOS</field>            
+        </record>
+        <record id="departamentos_18" model="res.country.state">
+            <field name="country_id">173</field>
+            <field name="name">MOQUEGUA</field>
+            <field name="code">MOQUEGUA</field>            
+        </record>
+        <record id="departamentos_19" model="res.country.state">
+            <field name="country_id">173</field>
+            <field name="name">PASCO</field>
+            <field name="code">PASCO</field>            
+        </record>
+        <record id="departamentos_20" model="res.country.state">
+            <field name="country_id">173</field>
+            <field name="name">PIURA</field>
+            <field name="code">PIURA</field>            
+        </record>
+        <record id="departamentos_21" model="res.country.state">
+            <field name="country_id">173</field>
+            <field name="name">PUNO</field>
+            <field name="code">PUNO</field>            
+        </record>
+        <record id="departamentos_22" model="res.country.state">
+            <field name="country_id">173</field>
+            <field name="name">SAN MARTIN</field>
+            <field name="code">SAN MARTIN</field>            
+        </record>
+        <record id="departamentos_23" model="res.country.state">
+            <field name="country_id">173</field>
+            <field name="name">TACNA</field>
+            <field name="code">TACNA</field>            
+        </record>
+        <record id="departamentos_24" model="res.country.state">
+            <field name="country_id">173</field>
+            <field name="name">TUMBES</field>
+            <field name="code">TUMBES</field>            
+        </record>
+        <record id="departamentos_25" model="res.country.state">
+            <field name="country_id">173</field>
+            <field name="name">UCAYALI</field>
+            <field name="code">UCAYALI</field>            
+        </record>
+        
+        
+    </data>
+</odoo>

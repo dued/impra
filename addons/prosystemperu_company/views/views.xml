@@ -1,0 +1,132 @@
+<odoo>
+  <data>
+    <record id="view_res_company_form" model="ir.ui.view">
+        <field name="name">res.company.form</field>
+        <field name="model">res.company</field>
+        <field name="inherit_id" ref="base.view_company_form"/>       
+        <field name="arch" type="xml">
+          <!--<field name="report_header" position="after">
+            <field name="ejecuta" string="Ejecuta"/>
+            <field name="texto_prueba" string="Texto"/>
+          </field>-->
+          <notebook position="inside">
+            <page string="Reporte">
+              <group name="group_top" >
+                <group name="group_left">
+                  <field name="url_webservice" string="Ip y Puerto(webservice)" placeholder="ejemplo: localhost:8012 " help="Debe ingresar la Ip seguido de dos puntos más su puerto"/>                  
+                  <field name="cuenta_detracciones" string="Nª cuenta detracciones"/>                    
+                </group>
+                <group name="group_right">
+                  <field name="igv_facturacion" string="Porcentaje IGV"/>                                                   
+                </group>                                                
+              </group>
+            </page>
+            <page string="Punto de venta">
+              <group name="group_top" >
+                <group name="group_left">
+                  <field name="ocultar_logo" string="Ocultar logo en el ticket"/>
+                  <field name="texto_logo" string="Texto como logo" attrs="{'invisible': [('ocultar_logo','=', False)]}"/>                          
+                </group>
+                <group name="group_right">
+                  <field name="rubro_empresa" string="Rubro de la empresa"/>
+                  <field name="imprimir_comprobante" string="Imprimir comprobante pdf"/>                                                             
+                </group>                                             
+              </group>
+            </page>
+            <page string="Facturación electrónica">
+              <group name="group_top" >                               
+                <group name="group_left" string="Certificado">
+                  <field name="certificado_pfx" filename="certificado_fname" string="Archivo"/>
+                  <field name="certificado_fname" invisible="1"/>
+                  <field name="password_certificado" string="Contraseña" password="True"/>                                   
+                </group>
+                <group name="group_right" string="Sunat">
+                  <field name="usuario_sunat" string="Usuario"/>
+                  <field name="password_sunat" string="Contraseña" password="True"/> 
+                  <field name="tipo_facturacion" string="Facturación"/>
+                  <field name="url_webservice_facturacion" string="Web service"/>                                   
+                </group> 
+                <group string="Modo de envío">
+                  <field name="modo_envio_documento" widget="radio" string="Opciones"/>                                                    
+                </group>
+                <group string="Página de custodia">
+                  <field name="pag_custodia" string="Nombre de la Página" placeholder="https://prueba.pagina.com"/>
+                  <field name="bd_custodia" string="Base de datos"/>                                                    
+                </group>                                                             
+              </group>
+            </page>
+          </notebook>          
+                                 
+        </field>
+    </record>
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- explicit list view definition -->
+    <!--
+    <record model="ir.ui.view" id="nombremodulo.list">
+      <field name="name">nombremodulo list</field>
+      <field name="model">nombremodulo.nombremodulo</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="value"/>
+          <field name="value2"/>
+        </tree>
+      </field>
+    </record>
+    -->
+
+    <!-- actions opening views on models -->
+    <!--
+    <record model="ir.actions.act_window" id="nombremodulo.action_window">
+      <field name="name">nombremodulo window</field>
+      <field name="res_model">nombremodulo.nombremodulo</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+    -->
+
+    <!-- server action to the one above -->
+    <!--
+    <record model="ir.actions.server" id="nombremodulo.action_server">
+      <field name="name">nombremodulo server</field>
+      <field name="model_id" ref="model_nombremodulo_nombremodulo"/>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": self._name,
+        }
+      </field>
+    </record>
+    -->
+
+    <!-- Top menu item -->
+    <!--
+    <menuitem name="nombremodulo" id="nombremodulo.menu_root"/>
+    -->
+    <!-- menu categories -->
+    <!--
+    <menuitem name="Menu 1" id="nombremodulo.menu_1" parent="nombremodulo.menu_root"/>
+    <menuitem name="Menu 2" id="nombremodulo.menu_2" parent="nombremodulo.menu_root"/>
+    -->
+    <!-- actions -->
+    <!--
+    <menuitem name="List" id="nombremodulo.menu_1_list" parent="nombremodulo.menu_1"
+              action="nombremodulo.action_window"/>
+    <menuitem name="Server to list" id="nombremodulo" parent="nombremodulo.menu_2"
+              action="nombremodulo.action_server"/>
+    -->
+  </data>
+</odoo>

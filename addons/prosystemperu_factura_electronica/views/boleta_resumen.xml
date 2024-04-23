@@ -1,0 +1,105 @@
+<odoo>
+  <data>
+    <record id="boleta_resumen_tree" model="ir.ui.view">
+      <field name="name">boleta.resumen.tree</field>
+      <field name="model">boleta.resumen</field>
+        <field name="arch" type="xml">
+          <tree string="Listado" default_order="id desc">
+            <field name="name" string="Resumen"/>
+            <field name="fecha_resumen" string="Fecha resumen"/>
+            <field name="fecha_documentos" string="Fecha emisión"/>
+            <field name="estado_boleta" string="Estado resumen"/>
+            <field name="total_resumen" string="Total resumen"/>
+            <field name="company_id" string="Compañia" groups="base.group_multi_company" options="{'no_create': True}"/>
+          </tree>
+        </field>
+    </record>
+  <!-- vamos a grabar datos -->
+    <record id="boleta_resumen_form" model="ir.ui.view">
+      <field name="name">boleta.resumen.form</field>
+      <field name="model">boleta.resumen</field>
+        <field name="arch" type="xml">
+          <form string="Formulario" version="10.0">
+            <header>
+              <button name="enviar_xml_resumen" string="Procesar CPE" type="object" attrs="{'invisible': [('estado_boleta', 'not in', ('borrador','generado'))]}" class="oe_highlight"/>
+              <button name="consultar_ticket" string="Consultar ticket" type="object" attrs="{'invisible': [('estado_boleta', '!=', 'enviado')]}" class="oe_highlight"/>
+              <field name="estado_boleta" widget="statusbar" nolabel="1" statusbar_visible="borrador,generado,enviado,aceptado,rechazado"/>
+            </header>
+            <!-- Cuerpo -->            
+            <sheet>
+            <div class="oe_title">
+              <h1>
+                <field name="name" readonly='1' force_save="1"/>
+              </h1>
+            </div>
+            <group name="group_top" >
+              <group name="group_left">
+                <field name="fecha_resumen" string="Fecha resumen" readonly='1' force_save="1" attrs="{'readonly': [('estado_boleta', 'not in', ('borrador','generado'))]}"/>
+                <field name="nro_ticket_sunat" string="Nro ticket" readonly='1' force_save="1"/>
+                <field name="company_id" string="Compañia" groups="base.group_multi_company" options="{'no_create': True}" attrs="{'readonly': [('estado_boleta', 'not in', ('borrador','generado'))]}"/>
+              </group>
+              <group name="group_right">
+                <field name="fecha_documentos" string="Fecha emisión" attrs="{'readonly': [('estado_boleta', 'not in', ('borrador','generado'))]}"/>
+                <!--<field name="prueba_texto" string="texto prueba"/>-->
+              </group>           
+            </group>
+
+            <notebook>
+            <page string="Boletas" name="whiteboard">
+              <field name="boleta_linea" mode="tree,kanban">
+                <tree string="Boletas disponibles" editable="bottom" create="false" delete="false">
+                  <field name="item" string="Item" readonly='1' force_save="1"/>
+                  <field name="id_boleta" string="ID boleta" domain="[('tipo_doc', '=', 'BOL'),('estado_invoice_xml','=','borrador')]" options="{'no_create': True, 'no_open': True}" readonly='1' force_save="1"/>
+                  <field name="tipo_documento" string="Tipo documento" readonly='1' force_save="1"/> 
+                  <field name="serie_documento" string="Serie" readonly='1' force_save="1"/>
+                  <field name="numeracion_documento" string="Numeración" readonly='1' force_save="1"/>                                     
+                  <field name="fecha_emision_documento" string="Fecha emisión" readonly='1' force_save="1"/>
+                  <field name="currency_id" string="Moneda" readonly='1' options="{'no_create': True, 'no_open': True}" force_save="1"/>
+                  <field name="estado_documento" string="Estado" readonly='1' force_save="1"/>
+                  <field name="importe_total" string="Importe total" readonly='1' force_save="1"/>                 
+                </tree>
+              </field>
+              
+              <group class="oe_subtotal_footer oe_right">
+                <field name="total_resumen"/>                
+              </group>                           
+            </page>
+            <page string="Facturación electrónica">                                                            
+              <group>
+                <field name="mensaje_estado" string="Estado Resumen" readonly='1' force_save="1"/>
+                <field name="fecha_enviado_sunat" string="Fecha envio sunat" readonly="1"/>         
+                <field name="xml_firmado_filename" invisible="1"/>
+                <field name="xml_firmado" filename="xml_firmado_filename" readonly="1" string="Descargar XML Firmado"/>
+                <field name="xml_cdr_filename" invisible="1"/>
+                <field name="xml_cdr" filename="xml_cdr_filename" readonly="1" string="Descargar CDR"/>              
+              </group>                            
+           </page>           
+            </notebook>
+            </sheet>
+            <div class="oe_chatter">
+              <!--<field name="message_follower_ids" widget="mail_followers"/>-->
+              <!--<field name="activity_ids" widget="mail_activity"/>-->
+              <field name="message_ids" widget="mail_thread"/>
+            </div>
+          </form>
+        </field>
+    </record>
+
+    <record id="boleta_resumen_action" model="ir.actions.act_window">
+      <field name="name">Boletas resumen</field>
+      <field name="res_model">boleta.resumen</field>
+      <field name="view_type">form</field>
+      <field name="view_mode">tree,form</field>
+      <field name="view_id" ref="boleta_resumen_tree"/>      
+      <field name="help" type="html">
+        <p class="oe_view_nocontent_create">
+          Click Para crear un Resumen de boletas.
+        </p>
+      </field>
+    </record>
+
+    <menuitem id="boleta_resumen_menu_action" name="Resumen diario de boletas" parent="account.menu_finance_receivables_documents" sequence="5" action="boleta_resumen_action"/>
+
+    
+  </data>
+</odoo>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="wizard_factura_regventas_form" model="ir.ui.view">
+        <field name="name" >Registro de ventas</field>
+        <field name="model" >factura.regventas</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                <group name="group_top" >
+                    <group name="group_left">
+                      <field name="periodo_consulta" string='Seleccione un periodo' required="1"></field>                        
+                    </group>                                      
+                </group>    
+                
+                <footer>
+                      <button name='action_excel' string='Exportar' class='oe_highlight' type='object' icon="fa-file-excel-o"/>                      
+                      <span class="or_cancel" > o <button special="cancel" string="Cerrar" type="object" class="oe_highlight" icon="fa-close"/>
+                     </span>
+               </footer>
+               </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_wizard_factura_regventas" model="ir.actions.act_window">
+        <field name="name">Registro de ventas</field>
+        <field name="res_model">factura.regventas</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="wizard_factura_regventas_form"/>
+        <field name="target">new</field>
+    </record>
+ 
+    <menuitem id="wizard_factura_regventas_menu_action" name="Registro de ventas" parent="account.menu_finance_reports" sequence="0" action="action_wizard_factura_regventas"/>
+
+
+    <!--<record id="vistaexcel_modelo_form" model="ir.ui.view">
+      <field name="name">vistaexcel.modelo.form</field>
+      <field name="model">vistaexcel.modelo</field>
+        <field name="arch" type="xml">
+          <form string="Formulario" version="10.0">
+            
+            <sheet>
+            <group>
+              <field name="txt_filename" invisible="1"/>
+                <field name="txt_binary" filename="txt_filename" readonly="1" string="Descargar Archivo"/>              
+            </group>
+            <footer>                                           
+              <span class="or_cancel">
+                <button special="cancel" string="Salir" type="object" class="oe_highlight"/>
+             </span>
+            </footer>
+            </sheet>
+          </form>
+        </field>
+    </record>-->
+
+
+</odoo>

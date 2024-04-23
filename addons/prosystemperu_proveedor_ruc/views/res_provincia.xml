@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!--provincia-->
+        <record id="view_provincia_tree" model="ir.ui.view">
+            <field name="name">res.provincia.tree</field>
+            <field name="model">res.provincia</field>
+            <field name="arch" type="xml">
+                <tree string="Provincia">
+                    <field name="name" string="Nombre Provincia"/>
+                    <field name="code" string="Código Provincia"/>
+                    <field name="departamento_id" string="Departamento"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_provincia_form" model="ir.ui.view">
+            <field name="name">res.provincia.form</field>
+            <field name="model">res.provincia</field>
+            <field name="arch" type="xml">
+                <form>                    
+                    <group>
+                        <group>                            
+                            <field name="name" string="Nombre Provincia"/>                            
+                            <field name="code" string="Código Provincia"/>
+                            <field name="departamento_id" string="Departamento" options='{"no_open": True}'/>
+                            <field name="company_id" string="Compañia" groups="base.group_multi_company" options="{'no_create': True}"/>
+                        </group>
+                        
+                    </group>
+                    <label for="distrito_ids" string="Distrito"/>
+                    <field name="distrito_ids">
+                        <tree editable="bottom">
+                            <field name="name" string="Nombre"/>
+                            <field name="code" string="Código"/>
+                            <field name="company_id" string="Compañia" groups="base.group_multi_company" options="{'no_create': True}"/>
+                        </tree>
+                    </field>
+                </form>
+            </field>
+        </record>
+
+        <!--<record id="action_provincia" model="ir.actions.act_window">
+            <field name="name">Provincia</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">res.provincia</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                  Click Para crear Una Provincia.
+                </p>
+            </field>
+        </record>
+
+        <menuitem id="action_provincia_menu_action" name="Provincia" parent="purchase.menu_procurement_management" sequence="0" action="action_provincia"/>-->
+
+
+       
+
+        
+
+
+    </data>
+</odoo>

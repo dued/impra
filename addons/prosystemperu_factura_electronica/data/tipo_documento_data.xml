@@ -1,0 +1,90 @@
+<odoo>
+    <data noupdate="1">
+        <record id="tipo_documento_01" model="tipo.documento">
+            <field name="codigo">01</field>            
+            <field name="name">Factura</field>
+            <field name="abreviatura">FAC</field>            
+        </record>
+        <record id="tipo_documento_03" model="tipo.documento">
+            <field name="codigo">03</field>            
+            <field name="name">BOLETA DE VENTA </field>
+            <field name="abreviatura">BOL</field>            
+        </record>
+        <record id="tipo_documento_07" model="tipo.documento">
+            <field name="codigo">07</field>            
+            <field name="name">NOTA DE CREDITO</field>
+            <field name="abreviatura">NCR</field>            
+        </record>
+        <record id="tipo_documento_08" model="tipo.documento">
+            <field name="codigo">08</field>            
+            <field name="name">NOTA DE DEBITO</field>
+            <field name="abreviatura">NDB</field>            
+        </record>
+        <record id="tipo_documento_09" model="tipo.documento">
+            <field name="codigo">09</field>            
+            <field name="name">GUIA DE REMISIÓN REMITENTE</field>
+            <field name="abreviatura">GRR</field>            
+        </record>
+        <record id="tipo_documento_12" model="tipo.documento">
+            <field name="codigo">12</field>            
+            <field name="name">TICKET DE MAQUINA REGISTRADORA</field>
+            <field name="abreviatura">TMR</field>            
+        </record>
+        <record id="tipo_documento_13" model="tipo.documento">
+            <field name="codigo">13</field>            
+            <field name="name">DOCUMENTO EMITIDO POR BANCOS, INSTITUCIONES FINANCIERAS, CREDITICIAS Y DE SEGUROS QUE SE ENCUENTREN BAJO EL CONTROL DE LA SUPERINTENDENCIA DE BANCA Y SEGUROS</field>
+            <field name="abreviatura"></field>            
+        </record>
+        <record id="tipo_documento_14" model="tipo.documento">
+            <field name="codigo">14</field>            
+            <field name="name">RECIBO SERVICIOS PÚBLICOS</field>
+            <field name="abreviatura">RSP</field>            
+        </record>
+        <record id="tipo_documento_16" model="tipo.documento">
+            <field name="codigo">16</field>            
+            <field name="name">BOLETO DE VIAJE EMITIDO POR LAS EMPRESAS DE TRANSPORTE PÚBLICO INTERPROVINCIAL DE PASAJEROS</field>
+            <field name="abreviatura"></field>            
+        </record>
+        <record id="tipo_documento_18" model="tipo.documento">
+            <field name="codigo">18</field>            
+            <field name="name">DOCUMENTOS EMITIDOS POR LAS AFP</field>
+            <field name="abreviatura"></field>            
+        </record>
+        <record id="tipo_documento_20" model="tipo.documento">
+            <field name="codigo">20</field>            
+            <field name="name">COMPROBANTE DE RETENCION</field>
+            <field name="abreviatura"></field>            
+        </record>
+         <record id="tipo_documento_31" model="tipo.documento">
+            <field name="codigo">31</field>            
+            <field name="name">GUIA DE REMISIÓN TRANSPORTISTA</field>
+            <field name="abreviatura"></field>            
+        </record>
+         <record id="tipo_documento_40" model="tipo.documento">
+            <field name="codigo">40</field>            
+            <field name="name">COMPROBANTE DE PERCEPCION</field>
+            <field name="abreviatura"></field>            
+        </record>
+         <record id="tipo_documento_41" model="tipo.documento">
+            <field name="codigo">41</field>            
+            <field name="name">COMPROBANTE DE PERCEPCION – VENTA INTERNA (FÍSICO - FORMATO IMPRESO)</field>
+            <field name="abreviatura"></field>            
+        </record>
+         <record id="tipo_documento_56" model="tipo.documento">
+            <field name="codigo">56</field>            
+            <field name="name">COMPROBANTE DE PAGO SEAE</field>
+            <field name="abreviatura"></field>            
+        </record>
+        <record id="tipo_documento_71" model="tipo.documento">
+            <field name="codigo">71</field>            
+            <field name="name">GUIA DE REMISIÓN REMITENTE COMPLEMENTARIA</field>
+            <field name="abreviatura"></field>            
+        </record>
+        <record id="tipo_documento_72" model="tipo.documento">
+            <field name="codigo">72</field>            
+            <field name="name">GUIA DE REMISION TRANSPORTISTA COMPLEMENTARIA</field>
+            <field name="abreviatura"></field>            
+        </record>
+        
+    </data>
+</odoo>

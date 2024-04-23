@@ -1,0 +1,145 @@
+<odoo>
+    <data noupdate="1">
+        <record id="um_sunat_01" model="um.sunat">
+            <field name="codigo_um">H87</field>            
+            <field name="name">Pieza</field>            
+        </record>
+        <record id="um_sunat_02" model="um.sunat">
+            <field name="codigo_um">EA</field>            
+            <field name="name">Elemento(Pieza) unidad de medida inglesa</field>            
+        </record>
+        <record id="um_sunat_03" model="um.sunat">
+            <field name="codigo_um">E48</field>            
+            <field name="name">Unidad de servicio</field>            
+        </record>
+        <record id="um_sunat_04" model="um.sunat">
+            <field name="codigo_um">KGM</field>            
+            <field name="name">kilogramo</field>            
+        </record>
+        <record id="um_sunat_05" model="um.sunat">
+            <field name="codigo_um">GRM</field>            
+            <field name="name">Gramo</field>            
+        </record>
+        <record id="um_sunat_06" model="um.sunat">
+            <field name="codigo_um">A9</field>            
+            <field name="name">Tarífa</field>            
+        </record>
+        <record id="um_sunat_07" model="um.sunat">
+            <field name="codigo_um">MTR</field>            
+            <field name="name">Metro</field>            
+        </record>
+        <record id="um_sunat_08" model="um.sunat">
+            <field name="codigo_um">INH</field>            
+            <field name="name">Pulgada</field>            
+        </record>
+        <record id="um_sunat_09" model="um.sunat">
+            <field name="codigo_um">FOT</field>            
+            <field name="name">Pie</field>            
+        </record>
+        <record id="um_sunat_10" model="um.sunat">
+            <field name="codigo_um">YRD</field>            
+            <field name="name">Yarda</field>            
+        </record>
+        <record id="um_sunat_11" model="um.sunat">
+            <field name="codigo_um">SMI</field>            
+            <field name="name">Milla (milla estatal)</field>            
+        </record>
+        <record id="um_sunat_12" model="um.sunat">
+            <field name="codigo_um">MTK</field>            
+            <field name="name">Metro cuadrado</field>            
+        </record>
+        <record id="um_sunat_13" model="um.sunat">
+            <field name="codigo_um">CMK</field>            
+            <field name="name">Centímetro cuadrado</field>            
+        </record>
+        <record id="um_sunat_14" model="um.sunat">
+            <field name="codigo_um">MTQ</field>            
+            <field name="name">Metro cúbico</field>            
+        </record>
+        <record id="um_sunat_15" model="um.sunat">
+            <field name="codigo_um">LTR</field>            
+            <field name="name">Litro</field>            
+        </record>
+        <record id="um_sunat_16" model="um.sunat">
+            <field name="codigo_um">GLI</field>            
+            <field name="name">Galón (UK)</field>            
+        </record>
+        <record id="um_sunat_17" model="um.sunat">
+            <field name="codigo_um">GLL</field>            
+            <field name="name">Galón (EUA)</field>            
+        </record>
+        <record id="um_sunat_18" model="um.sunat">
+            <field name="codigo_um">HUR</field>            
+            <field name="name">Hora</field>            
+        </record>
+        <record id="um_sunat_19" model="um.sunat">
+            <field name="codigo_um">DAY</field>            
+            <field name="name">Día</field>            
+        </record>
+        <record id="um_sunat_20" model="um.sunat">
+            <field name="codigo_um">ANN</field>            
+            <field name="name">Año</field>            
+        </record>
+        <record id="um_sunat_21" model="um.sunat">
+            <field name="codigo_um">C62</field>            
+            <field name="name">Uno</field>            
+        </record>
+        <record id="um_sunat_22" model="um.sunat">
+            <field name="codigo_um">5B</field>            
+            <field name="name">Batch</field>            
+        </record>
+        <record id="um_sunat_23" model="um.sunat">
+            <field name="codigo_um">AB</field>            
+            <field name="name">Paquete a granel</field>            
+        </record>
+        <record id="um_sunat_24" model="um.sunat">
+            <field name="codigo_um">LO</field>            
+            <field name="name">Lote (unidad de adquisición)</field>            
+        </record>
+        <record id="um_sunat_25" model="um.sunat">
+            <field name="codigo_um">XLT</field>            
+            <field name="name">Lote</field>            
+        </record>
+        <record id="um_sunat_26" model="um.sunat">
+            <field name="codigo_um">LH</field>            
+            <field name="name">Hora de trabajo</field>            
+        </record>
+        <record id="um_sunat_27" model="um.sunat">
+            <field name="codigo_um">AS</field>            
+            <field name="name">Variedad</field>            
+        </record>
+        <record id="um_sunat_28" model="um.sunat">
+            <field name="codigo_um">HEA</field>            
+            <field name="name">Cabeza</field>            
+        </record>
+        <record id="um_sunat_29" model="um.sunat">
+            <field name="codigo_um">IE</field>            
+            <field name="name">Personas</field>            
+        </record>
+        <record id="um_sunat_30" model="um.sunat">
+            <field name="codigo_um">NMP</field>            
+            <field name="name">Número de paquetes</field>            
+        </record>
+        <record id="um_sunat_31" model="um.sunat">
+            <field name="codigo_um">SET</field>            
+            <field name="name">Conjunto</field>            
+        </record>
+        <record id="um_sunat_32" model="um.sunat">
+            <field name="codigo_um">ZZ</field>            
+            <field name="name">Mutuamente definido</field>            
+        </record>
+        <record id="um_sunat_33" model="um.sunat">
+            <field name="codigo_um">XBX</field>            
+            <field name="name">Caja</field>            
+        </record>
+        <record id="um_sunat_34" model="um.sunat">
+            <field name="codigo_um">XKI</field>            
+            <field name="name">Kit (Conjunto de piezas)</field>            
+        </record>
+        <record id="um_sunat_35" model="um.sunat">
+            <field name="codigo_um">XOK</field>            
+            <field name="name">Bloque</field>            
+        </record>        
+        
+    </data>
+</odoo>

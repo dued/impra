@@ -1,0 +1,41 @@
+<odoo>
+    <data noupdate="1">
+        <record id="tipo_operacion_01" model="tipo.operacion">
+            <field name="codigo">0101</field>            
+            <field name="name">Venta Interna</field>            
+        </record>
+        <record id="tipo_operacion_02" model="tipo.operacion">
+            <field name="codigo">0102</field>            
+            <field name="name">Exportación</field>            
+        </record>
+        <record id="tipo_operacion_03" model="tipo.operacion">
+            <field name="codigo">0103</field>            
+            <field name="name">No Domiciliados</field>           
+        </record>
+        <record id="tipo_operacion_04" model="tipo.operacion">
+            <field name="codigo">0104</field>            
+            <field name="name">Venta Interna-Anticipos</field>            
+        </record>
+        <record id="tipo_operacion_05" model="tipo.operacion">
+            <field name="codigo">0105</field>            
+            <field name="name">Venta Itinerante</field>         
+        </record>
+        <record id="tipo_operacion_06" model="tipo.operacion">
+            <field name="codigo">0106</field>            
+            <field name="name">Factura Guía</field>            
+        </record>
+        <record id="tipo_operacion_07" model="tipo.operacion">
+            <field name="codigo">0107</field>            
+            <field name="name">Venta Arroz Pilado</field>         
+        </record>
+        <record id="tipo_operacion_08" model="tipo.operacion">
+            <field name="codigo">0108</field>            
+            <field name="name">Factura-Comprobante de Percepción</field>    
+        </record>
+        <record id="tipo_operacion_10" model="tipo.operacion">
+            <field name="codigo">0110</field>            
+            <field name="name">Factura - Guía remitente</field>    
+        </record>        
+        
+    </data>
+</odoo>

@@ -1,0 +1,29 @@
+<odoo>
+    <data noupdate="1">
+        <record id="doc_rel_01" model="documentos.relacionados">
+            <field name="codigo">01</field>            
+            <field name="name">Factura – emitida para corregir error en el RUC</field>            
+        </record>
+        <record id="doc_rel_02" model="documentos.relacionados">
+            <field name="codigo">02</field>            
+            <field name="name">Factura – emitida por anticipos</field>            
+        </record>
+        <record id="doc_rel_03" model="documentos.relacionados">
+            <field name="codigo">03</field>            
+            <field name="name">Boleta de Venta – emitida por anticipos</field>            
+        </record>
+        <record id="doc_rel_04" model="documentos.relacionados">
+            <field name="codigo">04</field>            
+            <field name="name">Ticket de Salida - ENAPU</field>            
+        </record>
+        <record id="doc_rel_05" model="documentos.relacionados">
+            <field name="codigo">05</field>            
+            <field name="name">Código SCOP</field>            
+        </record>
+        <record id="doc_rel_99" model="documentos.relacionados">
+            <field name="codigo">99</field>            
+            <field name="name">Otros</field>            
+        </record>      
+            
+    </data>
+</odoo>

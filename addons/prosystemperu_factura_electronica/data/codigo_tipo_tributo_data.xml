@@ -1,0 +1,63 @@
+<odoo>
+    <data noupdate="1">        
+        <record id="cod_tip_trib_1000" model="codigo.tipo.tributo">
+            <field name="codigo">1000</field>            
+            <field name="name">IGV Impuesto General a las Ventas</field>
+            <field name="codigo_internacional">VAT</field>            
+            <field name="nombre">IGV</field> 
+            <field name="categoria">S</field>                         
+        </record>
+        <record id="cod_tip_trib_1016" model="codigo.tipo.tributo">
+            <field name="codigo">1016</field>            
+            <field name="name">Impuesto a la Venta Arroz Pilado</field>
+            <field name="codigo_internacional">VAT</field>            
+            <field name="nombre">IVAP</field>
+            <field name="categoria">X</field>              
+        </record>
+        <record id="cod_tip_trib_2000" model="codigo.tipo.tributo">
+            <field name="codigo">2000</field>            
+            <field name="name">ISC Impuesto Selectivo al Consumo</field>
+            <field name="codigo_internacional">EXC</field>            
+            <field name="nombre">ISC</field>
+            <field name="categoria">X</field>              
+        </record>
+        <record id="cod_tip_trib_9995" model="codigo.tipo.tributo">
+            <field name="codigo">9995</field>            
+            <field name="name">Exportación</field>
+            <field name="codigo_internacional">FRE</field>            
+            <field name="nombre">EXP</field>
+            <field name="categoria">G</field>              
+        </record>
+        <record id="cod_tip_trib_9996" model="codigo.tipo.tributo">
+            <field name="codigo">9996</field>            
+            <field name="name">Gratuito</field>
+            <field name="codigo_internacional">FRE</field>            
+            <field name="nombre">GRA</field>
+            <field name="categoria">Z</field>              
+        </record>
+        <record id="cod_tip_trib_9997" model="codigo.tipo.tributo">
+            <field name="codigo">9997</field>            
+            <field name="name">Exonerado</field>
+            <field name="codigo_internacional">VAT</field>            
+            <field name="nombre">EXO</field>
+            <field name="categoria">E</field>              
+        </record>
+        <record id="cod_tip_trib_9998" model="codigo.tipo.tributo">
+            <field name="codigo">9998</field>            
+            <field name="name">Inafecto</field>
+            <field name="codigo_internacional">FRE</field>            
+            <field name="nombre">INA</field>
+            <field name="categoria">O</field>              
+        </record>
+        <record id="cod_tip_trib_9999" model="codigo.tipo.tributo">
+            <field name="codigo">9999</field>            
+            <field name="name">Otros tributos</field>
+            <field name="codigo_internacional">OTH</field>            
+            <field name="nombre">OTROS</field>
+            <field name="categoria">X</field>              
+        </record>   
+        
+        
+        
+    </data>
+</odoo>

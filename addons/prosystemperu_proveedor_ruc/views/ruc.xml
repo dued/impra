@@ -1,0 +1,139 @@
+<odoo>
+  <data>
+
+    <record id="view_res_partner_form" model="ir.ui.view">
+        <field name="name">res.partner.form</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>       
+        <field name="arch" type="xml">                   
+          <field name="vat" position="attributes">
+            <attribute name="invisible">1</attribute>
+          </field>                   
+          <field name="street2" position="attributes">
+            <attribute name="placeholder">Distrito</attribute>
+            <attribute name="help"> </attribute>
+            <attribute name="string">Distrito</attribute>
+          </field>
+          <field name="city" position="attributes">            
+            <attribute name="help"> </attribute>            
+          </field>
+          <field name="state_id" position="attributes">
+            <attribute name="placeholder">Departamento</attribute>
+            <attribute name="help"> </attribute>
+            <attribute name="string">Departamento</attribute>
+          </field>          
+          <field name="vat" position="after">
+            <field name="condicion" string="Condición" invisible="1"/>
+          </field>                               
+          <field name="parent_id" position="after">                        
+            <div class="o_row">
+              <field name="tipo_documento" attrs="{'invisible':[('company_type','!=','company')],'readonly':[('company_type','!=','company')]}"/>
+              <field name="vat" placeholder="Nº Documento" attrs="{'invisible':['|', ('company_type','!=','company')],'readonly':[('company_type','!=','company')]}"/>              
+              <field name="estado_ruc" attrs="{'invisible':[('company_type','!=','company')],'readonly':[('company_type','!=','company')]}"/>
+            </div>            
+          </field>
+
+          <xpath expr="//label[@for='street']" position="attributes">
+            <attribute name="invisible">1</attribute>
+          </xpath>
+          <xpath expr="//div[@class='o_address_format']" position="attributes">
+            <attribute name="invisible">1</attribute>
+          </xpath>
+
+          <field name="category_id" position="before">                                  
+            <field name="country_id" string="País" options='{"no_open": True, "no_create": True}'/>
+            <field name="state_id" string="Departamento" options='{"no_open": True, "no_create": True}'/>
+            <field name="provincia_id" string="Provincia" domain="[('departamento_id','=',state_id)]" options='{"no_open": True, "no_create": True}'/>
+            <field name="distrito_id" string="Distrito" domain="[('provincia_id','=',provincia_id)]" options='{"no_open": True, "no_create": True}'/>
+            <field name="street" string="Dirección"/>
+            <field name="urbanizacion" string="Urbanización"/>
+            <field name="nombre_comercial" string="Nombre comercial"/>
+          </field>
+
+          <!--<field name="category_id" position="after">
+            <field name="texto_prueba" string="Texto"/>
+          </field>-->
+
+
+
+
+
+        </field>
+    </record>
+
+    <!-- <record id="view_res_partner_form" model="ir.ui.view">
+        <field name="name">res.partner.form</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>       
+        <field name="arch" type="xml">
+            
+            <field name="vat" position="before">
+                <field name="vat_type"/>
+            </field>
+            
+        </field>
+    </record> -->
+    
+
+
+
+
+
+
+    <!-- explicit list view definition -->
+    <!--
+    <record model="ir.ui.view" id="agregacampo.list">
+      <field name="name">agregacampo list</field>
+      <field name="model">agregacampo.agregacampo</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="value"/>
+          <field name="value2"/>
+        </tree>
+      </field>
+    </record>
+    -->
+
+    <!-- actions opening views on models -->
+    <!--
+    <record model="ir.actions.act_window" id="agregacampo.action_window">
+      <field name="name">agregacampo window</field>
+      <field name="res_model">agregacampo.agregacampo</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+    -->
+
+    <!-- server action to the one above -->
+    <!--
+    <record model="ir.actions.server" id="agregacampo.action_server">
+      <field name="name">agregacampo server</field>
+      <field name="model_id" ref="model_agregacampo_agregacampo"/>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": self._name,
+        }
+      </field>
+    </record>
+    -->
+
+    <!-- Top menu item -->
+    <!--
+    <menuitem name="agregacampo" id="agregacampo.menu_root"/>
+    -->
+    <!-- menu categories -->
+    <!--
+    <menuitem name="Menu 1" id="agregacampo.menu_1" parent="agregacampo.menu_root"/>
+    <menuitem name="Menu 2" id="agregacampo.menu_2" parent="agregacampo.menu_root"/>
+    -->
+    <!-- actions -->
+    <!--
+    <menuitem name="List" id="agregacampo.menu_1_list" parent="agregacampo.menu_1"
+              action="agregacampo.action_window"/>
+    <menuitem name="Server to list" id="agregacampo" parent="agregacampo.menu_2"
+              action="agregacampo.action_server"/>
+    -->
+  </data>
+</odoo>

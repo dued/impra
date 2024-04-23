@@ -1,0 +1,20 @@
+<odoo>
+  <data>
+    <record id="vista_res_currency_form" model="ir.ui.view">
+        <field name="name">res.currency.form</field>
+        <field name="model">res.currency</field>
+        <field name="inherit_id" ref="base.view_currency_form"/>       
+        <field name="arch" type="xml">                     
+          <!--<field name="rate" position="after">
+              <field name='texto_prueba' string='Texto'/>              
+          </field>-->     
+          <xpath expr="/form/*" position="before">
+            <header>
+              <button name='data_actualiza' string='Consultar tipo de cambio' class='oe_highlight' type='object'/>
+            </header>
+          </xpath>            
+                           
+        </field>
+    </record>   
+  </data>
+</odoo>

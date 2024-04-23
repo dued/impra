@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="wizard_anulacion_form" model="ir.ui.view">
+        <field name="name" >Motivo anulación</field>
+        <field name="model" >wizard.anulacion</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                
+                <group>
+                  <field name="motivo_anula" string='Motivo de anulación' required="1"></field>                 
+                </group>                                      
+                                  
+                
+                <footer>
+                    <button name='enviar_registro' string='Anular' class='oe_highlight' type='object'/>                      
+                    <span class="or_cancel" > o <button special="cancel" string="Cerrar" type="object" class="oe_highlight" icon="fa-close"/>
+                    </span>
+               </footer>
+               </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_wizard_anulación" model="ir.actions.act_window">
+        <field name="name">Motivo anulación</field>
+        <field name="res_model">wizard.anulacion</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="wizard_anulacion_form"/>
+        <field name="target">new</field>
+    </record>   
+
+
+</odoo>

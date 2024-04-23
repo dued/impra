@@ -1,0 +1,337 @@
+<odoo>
+  <data>
+    <record id="ver_factura_ventas_herencia_tree" model="ir.ui.view">
+      <field name="name">factura.herencia.tree</field>
+      <field name="model">account.invoice</field>
+      <field name="inherit_id" ref="account.invoice_tree"/>
+        <field name="arch" type="xml">
+          <field name="number" position="after">
+                <field name="tipo_doc" string="Tip. Doc"/>
+                <field name="serie"  string="Serie"/>
+                <field name="numeracion_tree" string="Número"/>
+                <field name="numeracion" string="Número" invisible="1"/>
+          </field>
+          <field name="number" position="attributes">
+            <attribute name="invisible">1</attribute>
+          </field>
+          
+          <field name="state" position="after">
+            <field name="estado_invoice_xml" string="Estado CPE" />
+          </field>
+        </field>
+    </record>
+
+    <record id="ver_factura_ventas_herencia_form" model="ir.ui.view">
+        <field name="name">factura.herencia.form</field>
+        <field name="model">account.invoice</field>
+        <field name="inherit_id" ref="account.invoice_form"/>
+        <field name="arch" type="xml">
+
+           <field name="comment" position="before">
+            <div>              
+              <field name="nota" attrs="{'readonly': [('state', 'in', ['open', 'paid','anulado'])]}"/>
+            </div>
+          </field>
+
+          <field name="comment" position="attributes">
+            <attribute name="invisible">1</attribute>
+          </field>
+
+          <field name="partner_id" position="after">
+            <field name="comprobante_artificio_rectificativa"  string="Campo artificio" invisible="1"/>
+            <field name="refund_invoice_id" string="Documento origen" domain="[('serie','=',comprobante_artificio_rectificativa),('tipo_doc','in',('FAC','BOL')),('type', '=', 'out_invoice'),('state','=','open'),('partner_id','=', partner_id)]" attrs="{'invisible': [('type', 'not in', ('out_refund','out_debito'))], 'readonly': [('state', 'not in', 'draft')]}" options="{'no_open': True, 'no_create': True}"/>
+            <field name="correlativo_fisico" string="Correlativo físico" attrs="{'invisible': [('type', 'not in', ('out_refund','out_debito'))], 'readonly': [('state', 'not in', 'draft')]}" widget="mask" data-inputmask-mask="99-999-99999999"/>
+            <field name="fecha_fisico" string="Fecha físico" attrs="{'invisible': ['|',('type', 'not in', ('out_refund','out_debito')),('correlativo_fisico', 'in',(False, ''))], 'readonly': [('state', 'not in', 'draft')]}"/>
+            <field name="rectificativa_motivo" string="Tipo N.credito" attrs="{'invisible': [('type', '!=', 'out_refund')], 'readonly': [('state', 'not in', 'draft')]}"/>            
+            <field name="debito_motivo" string="Tipo N.Debito" attrs="{'invisible': [('type', '!=', 'out_debito')], 'readonly': [('state', 'not in', 'draft')]}"/>
+          </field>                 
+          <field name="partner_id" position="before">            
+            <field name="journal_id"  string="Comprobante original" invisible="1"/>
+            <field name="journal2_id"  string="Comprobante" options="{'no_open': True,'no_create': True}" attrs="{'readonly': [('state', 'in', ['open', 'paid','anulado'])]}"/>           
+          </field>
+          <field name="payment_term_id" position="before">
+            <field name="tipo_operacion"  string="Tipo de operación" attrs="{'readonly': [('state', 'in', ['open', 'paid','anulado'])]}" />            
+          </field>
+          <xpath expr="//field[@name='invoice_line_ids']/tree/field[@name='invoice_line_tax_ids']" position="before">
+            <field name="tip_ope_igv" string="Tipo Impuesto"/>                
+          </xpath>
+          <field name="user_id" position="after">
+            <field name="guia" string="Nro Guía" attrs="{'readonly': [('state', 'in', ['open', 'paid','anulado'])]}"/>
+            <field name="placa_vehiculo" string="Placa vehiculo" attrs="{'readonly': [('state', 'in', ['open', 'paid','anulado'])]}"/>                     
+          </field>
+          <xpath expr="//field[@name='invoice_line_ids']/tree/field[@name='invoice_line_tax_ids']" position="before">
+            <field name="primer_digito_tip_ope_igv" string="id tipo igv" invisible="1"/>                
+          </xpath>
+          <xpath expr="//field[@name='invoice_line_ids']/tree/field[@name='invoice_line_tax_ids']" position="replace">
+            <field name="invoice_line_tax_ids" widget="many2many_tags" options="{'no_create': True}" 
+              context="{'type':parent.type}" domain="[('type_tax_use','=','sale'),('company_id', '=', parent.company_id)]" 
+              attrs="{'readonly': [('primer_digito_tip_ope_igv', 'not in', ('10','171'))]}"/>               
+          </xpath>
+          <field name="comment" position="before">
+            <field name="monto_letras" invisible="True"/>                    
+          </field>
+          <!--ultimo hecho agregando valor anulado para el state y el boton que lo ejecuta -->
+          <field name="state" position="attributes">
+            <attribute name="statusbar_visible">draft,open,paid,anulado</attribute>
+          </field>
+          <button name="action_invoice_draft" position="before">
+            <button name="accion_anular_factura" string="Anular" type="object" attrs="{'invisible': [('state', 'not in', ('open','paid'))]}" groups="account.group_account_invoice"/>
+          </button>
+          <button name="invoice_print" position="after">
+            <button name="envio_automatico_correo" type="object" string="Enviar Correo" attrs="{'invisible':['|',('sent_correo','=',True),('estado_invoice_xml', '=', 'borrador')]}" class="oe_highlight o_invoice_send" groups="base.group_user"/>
+            <button name="envio_automatico_correo" type="object" string="Enviar Correo" attrs="{'invisible':['|',('sent_correo','=',False),('estado_invoice_xml', '=', 'borrador')]}" groups="base.group_user"/>
+            <button name="invoice_print_anulada" string="Imprimir factura" type="object" attrs="{'invisible':['|',('sent','=',True), ('state', '!=', 'anulado')]}" class="oe_highlight" groups="base.group_user"/>
+            <button name="invoice_print_anulada" string="Imprimir factura" type="object" attrs="{'invisible':['|',('sent','=',False), ('state', '!=', 'anulado')]}" groups="base.group_user"/>                                
+          </button>
+          <!--nuevo codigo para adjuntar archivos al correo-->
+          <page name="other_info" position="after">            
+            <page string="Documentos Relacionados">
+              <field name="documento_relacionado_line" widget="one2many_list" mode="tree" attrs="{'readonly': [('state', '!=', 'draft')]}">
+                <tree string="Documentos" editable="bottom">
+                  <field name="company_id" string="Compañia" groups="base.group_multi_company" options="{'no_create': True}"/>
+                  <field name="sequence" widget="handle"/>                  
+                  <field name="doc_rel_id" string="Tipo" options="{'no_open': True}"/>
+                  <field name="nro_docrel" string="Número"/>
+                </tree>
+              </field>              
+            </page>
+            <page string="Guías de Remisión">
+              <field name="guia_line" widget="one2many_list" mode="tree" attrs="{'readonly': [('state', '!=', 'draft')]}">
+                <tree string="Guía" editable="bottom">
+                  <field name="company_id" string="Compañia" groups="base.group_multi_company" options="{'no_create': True}" />
+                  <field name="sequence" widget="handle"/>
+                  <field name="tip_doc_id" string="Tipo" options="{'no_open': True}" domain="[('codigo', 'in', ('09','31'))]"/>
+                  <field name="serie_guia" string="Serie"/>
+                  <field name="nro_guia" string="Número"/>
+                </tree>
+              </field>              
+            </page>
+            <page string="Archivos Adjuntos">
+              <group>
+                <group>
+                  <field name="attachment_ids" widget="many2many_binary" string="Adjuntos"/>
+                </group>
+              </group>
+            </page>
+            <page string="Facturación Electrónica">
+              <group>
+                <group name="group_left" string="Archivos">
+                  <field name="estado_factura_xml" string="Estado"/>
+                  <field name="fecha_enviado_sunat" string="Fecha envio sunat" readonly="1"/>
+                  <field name="motivo_anulacion" string="Motivo anulación" readonly="1" attrs="{'invisible':[('state', '!=', 'anulado')]}"/>
+                  <field name="xml_firmado_filename" invisible="1"/>                    
+                  <field name="xml_firmado" filename="xml_firmado_filename" readonly="1" string="Descargar XML Firmado"/>
+                  <field name="xml_cdr_filename" invisible="1"/>
+                  <field name="xml_cdr" filename="xml_cdr_filename" readonly="1" string="Descargar CDR"/>  
+                </group>
+                <group name="group_right" string="Código QR">                
+                  <!--<field name="txt_filename" invisible="1"/>-->
+                  <field name="imagen_qr" widget="image" class="oe_avatar" readonly="1" string="Imagen"/>                
+              </group>
+              </group>
+            </page>
+          </page>
+         
+          <xpath expr="//button[@name='action_invoice_sent'][1]" position="replace">
+            <button name="action_invoice_sent" type="object" string="Enviar Correo" invisible="1" class="oe_highlight o_invoice_send" groups="base.group_user"/>
+          </xpath>
+          <xpath expr="//button[@name='action_invoice_sent'][2]" position="replace">
+            <button name="action_invoice_sent" type="object" string="Enviar Correo" invisible="1" groups="base.group_user"/>            
+          </xpath>         
+
+          <xpath expr="//field[@name='invoice_line_ids']/tree/field[@name='quantity']" position="before">
+            <field name="umedida_sunat" string="UM Sunat"/>                
+          </xpath>
+           
+
+          <xpath expr="//header" position="after">
+            <header>
+              <field name="sent_pag_custodia" string="sent pag custodia" invisible="1"/>              
+              <button name="enviar_xml" string="Procesar CPE" type="object" attrs="{'invisible': ['|' ,('state', 'not in', ('open','paid','anulado')),('estado_invoice_xml','not in',('borrador','generado'))]}" class="oe_highlight"/>
+              <button name="descargar_cpe" string="Consultar CPE" type="object" attrs="{'invisible': ['|',('state', 'not in', ('open','paid')),'|',('estado_factura_xml','=',False),('estado_factura_xml','like', 'ha sido aceptada')]}" class="oe_highlight"/>
+              <button name="cargar_pdfxml_custodia" type="object" string="Publicar CPE" attrs="{'invisible':['|',('sent_pag_custodia','=',True),('state', '=', 'draft')]}" class="oe_highlight"/>
+              <button name="cargar_pdfxml_custodia" type="object" string="Publicar CPE" attrs="{'invisible':['|',('sent_pag_custodia','=',False),('state', '=', 'draft')]}"/>
+              <button name="valida_cpe" type="object" string="Validar CPE" attrs="{'invisible':[('estado_invoice_xml', 'in', ('borrador','generado','enviado'))]}" class="oe_highlight"/>
+              <field name="estado_invoice_xml" widget="statusbar" nolabel="1" statusbar_visible="borrador,generado,enviado,aceptado,rechazado,baja"/> 
+            </header>                               
+          </xpath>
+
+          <field name="amount_untaxed" position="before">
+            <field name="total_bruto_item" string="Total bruto item" invisible="1"/>
+            <field name="total_descuento_item" string="Total Desc. item" invisible="1"/>
+            <field name="total_bruto" string="Total bruto"/>           
+            <field name="descuentos_globales_prc" string="Descuentos globales %" attrs="{'readonly': [('state', 'not in', 'draft')]}"/>
+            <field name="descuentos_globales_mto_prc" string="Descuentos globales %" invisible="True"/>
+            <field name="descuentos_globales_mto" string="Descuentos globales monto" attrs="{'readonly': [('state', 'not in', 'draft')]}"/> 
+            <field name="descuentos_globales" string="Descuentos globales" attrs="{'invisible': [('descuentos_globales','=', 0)]}"/>                     
+          </field>  
+
+          <field name="amount_untaxed" position="after">            
+            <field name="total_operaciones_gravadas" string="Total operaciones gravadas" attrs="{'invisible': [('total_operaciones_gravadas','=', 0)]}"/>
+            <field name="total_operaciones_exoneradas" string="Total operaciones exoneradas" attrs="{'invisible': [('total_operaciones_exoneradas','=', 0)]}"/>             
+            <field name="total_operaciones_inafectas" string="Total operaciones inafectas" attrs="{'invisible': [('total_operaciones_inafectas','=', 0)]}"/>
+            <field name="total_operaciones_exportadas" string="Total operaciones exportación" attrs="{'invisible': [('total_operaciones_exportadas','=', 0)]}"/>
+            <field name="total_operaciones_gratuitas" string="Total operaciones gratuitas" attrs="{'invisible': [('total_operaciones_gratuitas','=', 0)]}"/>  
+                                
+          </field>
+
+          <xpath expr="//field[@name='invoice_line_ids']/tree/field[@name='umedida_sunat']" position="before">
+            <field name="condicion_impuesto_precio" string="precio incluido(IGV)" invisible="True"/>
+            <field name="monto_impuesto_precio" string="IGV" invisible="True"/>                
+          </xpath>
+
+          <xpath expr="//field[@name='invoice_line_ids']/tree/field[@name='price_unit']" position="after">            
+            <field name="precio_sin_igv" string="Precio sin IGV" invisible="1"/>                
+          </xpath>
+
+           <field name="amount_tax" position="after">
+            <field name="total_otros_tributos" string="Total otros tributos" attrs="{'invisible': [('total_otros_tributos','=', 0)], 'readonly': [('state', 'not in', 'draft')]}"/>
+            <field name="total_final_parcial" string="Total" class="oe_subtotal_footer_separator"/> 
+            <field name="total_otros_cargos" string="Total otros cargos" attrs="{'readonly': [('state', 'not in', 'draft')]}"/> 
+           </field>
+
+           <xpath expr="//field[@name='invoice_line_ids']/tree/field[@name='invoice_line_tax_ids']" position="after">            
+            <field name="otros_tributos" string="Otros tributos"/>
+            <field name="prec_sin_igv" string="Precio sin igv" invisible="1"/>
+            <field name="prec_con_igv" string="Precio con igv" invisible="1"/> 
+            <field name="prec_tipo" string="Precio tipo" invisible="1"/>
+            <field name="prec_con_igv_ref" string="Precio con igv referencial" invisible="1"/> 
+            <field name="importe_bruto_item" string="Importe bruto item" invisible="1"/> 
+            <field name="importe_descuento_item" string="Importe descuento item" invisible="1"/>
+            <field name="codigo_impuesto" string="codigo_impuesto" invisible="1"/>
+            <field name="nombre_impuesto" string="nombre_impuesto" invisible="1"/>
+            <field name="name_impuesto" string="name_impuesto" invisible="1"/>
+            <field name="categ_impuesto" string="categ_impuesto" invisible="1"/>                  
+          </xpath>
+
+          <field name="amount_total" position="attributes">
+            <attribute name="string">Total neto</attribute>
+          </field>
+
+          <field name="amount_tax" position="attributes">
+            <attribute name="string">IGV</attribute>
+          </field>
+
+          <field name="comment" position="after">
+            <field name="sent_correo" invisible="1"/>
+          </field>
+
+          <xpath expr="//button[@name='invoice_print'][1]" position="attributes">            
+            <attribute name="string">Imprimir CPE</attribute>                
+          </xpath>
+          <xpath expr="//button[@name='invoice_print'][2]" position="attributes">            
+            <attribute name="string">Imprimir CPE</attribute>                
+          </xpath>
+
+          <!--<button name="invoice_print" position="attributes">
+            <attribute name="string">Imprimir CPE</attribute>
+          </button>-->
+          
+          <button name="%(account.action_account_invoice_refund)d" position="attributes">
+            <attribute name="string">Emitir nota de credito</attribute>
+          </button>
+          <!--<xpath expr="//button[@name='%(account.action_account_invoice_refund)d']" position="replace">
+            <button name="%(account.action_account_invoice_refund)d" type='action' string='Emitir nota de credito' groups="account.group_account_invoice" attrs="{'invisible': ['|',('type', '=', 'out_refund'), ('state', 'not in', ('open','paid'))]}"/>
+          </xpath>-->
+          
+          <field name="partner_id" position="replace">
+            <field string="Cliente" name="partner_id" context="{'search_default_customer':1, 'show_address': 1, 'default_company_type': 'company','default_is_company': True}" options='{"always_reload": True, "no_quick_create": True}' domain="[('customer', '=', True)]"/>
+          </field>
+
+          <xpath expr="//field[@name='invoice_line_ids']/tree/field[@name='price_subtotal']" position="after">            
+            <field name="descuento_global_monto_linea" string="Dscto global" invisible="1"/>
+            <field name="importe_base_line" string="Importe base" invisible="1"/>
+            <field name="igv_monto_linea" string="igv monto" invisible="1"/>                
+          </xpath>
+
+          <xpath expr="//field[@name='invoice_line_ids']/tree/field[@name='product_id']" position="replace">            
+            <field name="product_id" domain="[('sale_ok','=',True)]" options='{"always_reload": True, "no_quick_create": True}'/>
+                          
+          </xpath>
+
+          <field name="tipo_operacion" position="before">
+            <field name="name" string="Motivo" attrs="{'invisible': [('type', 'not in', ('out_refund','out_debito'))]}"/>
+          </field>
+
+          <field name="payment_term_id" position="after">
+            <field name="orden_compra" string="Orden de compra" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+          </field>                  
+          
+                   
+        </field>
+    </record>
+
+<!--cambiando el nombre del menu-->
+    
+<!--termina cambiando el nombre del menu-->
+    
+    <record id="view_invoice_line_form_fe" model="ir.ui.view">
+      <field name="name">account.invoice.line.form.fe</field>
+      <field name="model">account.invoice.line</field>
+      <field name="inherit_id" ref="account.view_invoice_line_form"/>
+      <field name="arch" type="xml">
+        <xpath expr="//field[@name='product_id']" position="after">
+          <field name="umedida_sunat" string="UM Sunat"/>
+        </xpath>
+        <xpath expr="//field[@name='invoice_line_tax_ids']" position="before">
+          <field name="tip_ope_igv" string="Tipo Impuesto"/>
+          <field name="primer_digito_tip_ope_igv" string="id tipo igv" invisible="1"/>
+
+          <field name="condicion_impuesto_precio" string="precio incluido(IGV)" invisible="True"/>
+          <field name="monto_impuesto_precio" string="IGV" invisible="True"/>
+
+          <field name="precio_sin_igv" string="Precio sin IGV" invisible="1"/>
+
+          <field name="otros_tributos" string="Otros tributos"/>
+          <field name="prec_sin_igv" string="Precio sin igv" invisible="1"/>
+          <field name="prec_con_igv" string="Precio con igv" invisible="1"/> 
+          <field name="prec_tipo" string="Precio tipo" invisible="1"/>
+          <field name="prec_con_igv_ref" string="Precio con igv referencial" invisible="1"/> 
+          <field name="importe_bruto_item" string="Importe bruto item" invisible="1"/> 
+          <field name="importe_descuento_item" string="Importe descuento item" invisible="1"/>
+          <field name="codigo_impuesto" string="codigo_impuesto" invisible="1"/>
+          <field name="nombre_impuesto" string="nombre_impuesto" invisible="1"/>
+          <field name="name_impuesto" string="name_impuesto" invisible="1"/>
+          <field name="categ_impuesto" string="categ_impuesto" invisible="1"/>
+        </xpath>
+
+      </field>
+    </record>
+
+    <record id="action_emitir_nota_debito" model="ir.actions.act_window">
+      <field name="name">Emitir nota debito cliente</field>
+      <field name="res_model">account.invoice</field>
+      <field name="view_type">form</field>
+      <field name="view_mode">tree,form,kanban,calendar,graph,pivot</field>
+      <field name="view_id" eval="False"/>
+      <!--<field name="view_id" ref="prosystemperu_factura_electronica.ver_factura_ventas_herencia_tree"/>-->
+      <field name="domain">[('type','=', 'out_debito')]</field>
+      <field name="context">{'default_type':'out_debito', 'type':'out_debito', 'journal_type': 'sale'}</field>
+    </record>
+
+
+    <record id="action_emitir_nota_debito_tree" model="ir.actions.act_window.view">
+      <field eval="1" name="sequence"/>
+      <field name="view_mode">tree</field>
+      <field name="view_id" ref="prosystemperu_factura_electronica.ver_factura_ventas_herencia_tree"/>
+      <field name="act_window_id" ref="action_emitir_nota_debito"/>
+    </record>
+
+    <record id="action_emitir_nota_debito_form" model="ir.actions.act_window.view">
+      <field eval="2" name="sequence"/>
+      <field name="view_mode">form</field>
+      <field name="view_id" ref="prosystemperu_factura_electronica.ver_factura_ventas_herencia_form"/>
+      <field name="act_window_id" ref="action_emitir_nota_debito"/>
+    </record>
+
+    
+    <menuitem id="action_emitir_nota_debito_menu" name="Nota debito de cliente" parent="account.menu_finance_receivables_documents" sequence="2" action="action_emitir_nota_debito"/>
+
+
+
+
+
+
+
+  </data>
+</odoo>

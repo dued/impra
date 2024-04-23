@@ -1,0 +1,4 @@
+*para que funcione el convertir monto a letras
+-hay que poner el archivo monto_a_letras.py en la ruta 
+C:\Program Files (x86)\Odoo 11.0\python\Lib\site-packages
+para que a la hora de importarlo desde odoo lo encuentre al archivo y asi utilizar sus funciones. 

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+		<record id="P_01" model="res.country.state">
+            <field name="country_id" ref="base.pe"/>
+            <field name="name">PRUEBA1</field>
+            <field name="code">01</field>
+        </record>
+        <record id="P_02" model="res.country.state">
+            <field name="country_id" ref="base.pe"/>
+            <field name="name">PRUEBA2</field>
+            <field name="code">02</field>
+        </record>
+    </data>
+</odoo>

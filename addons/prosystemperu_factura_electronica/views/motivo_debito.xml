@@ -1,0 +1,34 @@
+<odoo>
+  <data>
+    <record id="debito_motivo_tree" model="ir.ui.view">
+      <field name="name">debito.motivo.tree</field>
+      <field name="model">debito.motivo</field>
+        <field name="arch" type="xml">
+          <tree string="Listado">
+            <field name="codigo" string="Código"/>
+            <field name="name" string="Descripción"/>
+            <field name="company_id" string="Compañia" groups="base.group_multi_company" options="{'no_create': True}"/>
+          </tree>
+        </field>
+    </record>
+  <!-- vamos a grabar datos -->
+    <record id="debito_motivo_form" model="ir.ui.view">
+      <field name="name">debito.motivo.form</field>
+      <field name="model">debito.motivo</field>
+        <field name="arch" type="xml">
+          <form string="Formulario" version="10.0">
+            <!-- Cuerpo -->
+            <sheet>
+            <group>
+              <field name="codigo" string="Código"/>
+              <field name="name" string="Descripción"/>
+              <field name="company_id" string="Compañia" groups="base.group_multi_company" options="{'no_create': True}"/>           
+            </group>
+            </sheet>
+          </form>
+        </field>
+    </record>
+
+    
+  </data>
+</odoo>

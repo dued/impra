@@ -1,0 +1,26 @@
+"id","code","name","country_id:id"
+departamento_01,"01","AMAZONAS",base.pe
+departamento_02,"02","ANCASH",base.pe
+departamento_03,"03","APURIMAC",base.pe
+departamento_04,"04","AREQUIPA",base.pe
+departamento_05,"05","AYACUCHO",base.pe
+departamento_06,"06","CAJAMARCA",base.pe
+departamento_07,"07","CUSCO",base.pe
+departamento_08,"08","HUANCAVELICA",base.pe
+departamento_09,"09","HUANUCO",base.pe
+departamento_10,"10","ICA",base.pe
+departamento_11,"11","JUNIN",base.pe
+departamento_12,"12","LA LIBERTAD",base.pe
+departamento_13,"13","LAMBAYEQUE",base.pe
+departamento_14,"14","LIMA",base.pe
+departamento_15,"15","LORETO",base.pe
+departamento_16,"16","MADRE DE DIOS",base.pe
+departamento_17,"17","MOQUEGUA",base.pe
+departamento_18,"18","PASCO",base.pe
+departamento_19,"19","PIURA",base.pe
+departamento_20,"20","PUNO",base.pe
+departamento_21,"21","SAN MARTIN",base.pe
+departamento_22,"22","TACNA",base.pe
+departamento_23,"23","TUMBES",base.pe
+departamento_24,"24","PROV. CONST. DEL CALLAO",base.pe
+departamento_25,"25","UCAYALI",base.pe

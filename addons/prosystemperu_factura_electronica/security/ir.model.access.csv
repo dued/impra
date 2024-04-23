@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+permiso_invoice_doc_relac_line,Permiso Invoice Doc Relac Line,model_account_invoice_documentorelacionado_line,account.group_account_invoice,1,1,1,1
+permiso_doc_relac_,Permiso Doc Relac,model_documentos_relacionados,account.group_account_invoice,1,0,0,0
+permiso_invoice_guia_line,Permiso Invoice Guia Line,model_account_invoice_guia_line,account.group_account_invoice,1,1,1,1
+permiso_tipo_documento,Permiso Tipo Doc,model_tipo_documento,account.group_account_invoice,1,0,0,0

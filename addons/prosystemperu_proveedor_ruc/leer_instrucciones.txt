@@ -1,0 +1,10 @@
+Para que funcione este Modulo de Consulta Ruc, primero debe entrar a la carpeta instalar_archivo_requeridos,
+Una vez dentro Instale primero tesseract-ocr-setup-3.02.02.exe .
+
+Luego cree un path nuevo en variable de entorno con la ruta del python instalado dentro de odoo;
+ 
+Instale el pytesseract , se instala por cmd con el siguiente comando pero primero debe darle la ruta donde se encuentra 
+el archivo setup.py dentro del pytesseract ejm.se abrio cmd:
+toda la ruta del archivo setup.py dentro de pytesseract>python setup.py install
+
+Enter y eso es todo ya pueden instalar el modulo de consulta Ruc

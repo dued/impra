@@ -1,0 +1,106 @@
+<odoo>
+  <data>
+
+    <record id="ver_res_users_herencia_tree" model="ir.ui.view">
+      <field name="name">res.users.tree</field>
+      <field name="model">res.users</field>
+      <field name="inherit_id" ref="base.view_users_tree"/>
+        <field name="arch" type="xml">
+          <field name="login" position="after">
+                <field name="journal_id" string="Comprobante"/>                
+          </field>         
+        </field>
+    </record>
+
+
+
+
+    <record id="ver_res_users_herencia_form" model="ir.ui.view">
+        <field name="name">res.users.form</field>
+        <field name="model">res.users</field>
+        <field name="inherit_id" ref="base.view_users_form"/>       
+        <field name="arch" type="xml">
+
+          <notebook position="inside">
+            <page string="Comprobante">
+              <group>
+                <field name="journal_ids"  string="Comprobantes " widget="many2many_tags" options="{'no_open': True,'no_create': True}"/> 
+                <field name="journal_id"  string="Comprobante default" options="{'no_open': True,'no_create': True}"/>                
+              </group>
+            </page>
+          </notebook>                           
+          
+                   
+        </field>
+    </record>
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- explicit list view definition -->
+    <!--
+    <record model="ir.ui.view" id="nombremodulo.list">
+      <field name="name">nombremodulo list</field>
+      <field name="model">nombremodulo.nombremodulo</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="value"/>
+          <field name="value2"/>
+        </tree>
+      </field>
+    </record>
+    -->
+
+    <!-- actions opening views on models -->
+    <!--
+    <record model="ir.actions.act_window" id="nombremodulo.action_window">
+      <field name="name">nombremodulo window</field>
+      <field name="res_model">nombremodulo.nombremodulo</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+    -->
+
+    <!-- server action to the one above -->
+    <!--
+    <record model="ir.actions.server" id="nombremodulo.action_server">
+      <field name="name">nombremodulo server</field>
+      <field name="model_id" ref="model_nombremodulo_nombremodulo"/>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": self._name,
+        }
+      </field>
+    </record>
+    -->
+
+    <!-- Top menu item -->
+    <!--
+    <menuitem name="nombremodulo" id="nombremodulo.menu_root"/>
+    -->
+    <!-- menu categories -->
+    <!--
+    <menuitem name="Menu 1" id="nombremodulo.menu_1" parent="nombremodulo.menu_root"/>
+    <menuitem name="Menu 2" id="nombremodulo.menu_2" parent="nombremodulo.menu_root"/>
+    -->
+    <!-- actions -->
+    <!--
+    <menuitem name="List" id="nombremodulo.menu_1_list" parent="nombremodulo.menu_1"
+              action="nombremodulo.action_window"/>
+    <menuitem name="Server to list" id="nombremodulo" parent="nombremodulo.menu_2"
+              action="nombremodulo.action_server"/>
+    -->
+  </data>
+</odoo>

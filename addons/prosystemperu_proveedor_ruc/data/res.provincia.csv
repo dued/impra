@@ -1,0 +1,199 @@
+"id","code","name","departamento_id:id"
+provincia_0101,"CHACHAPOYAS","0101",departamento_01
+provincia_0102,"BAGUA","0102",departamento_01
+provincia_0103,"BONGARA","0103",departamento_01
+provincia_0104,"LUYA","0104",departamento_01
+provincia_0105,"RODRIGUEZ DE MENDOZA","0105",departamento_01
+provincia_0106,"CONDORCANQUI","0106",departamento_01
+provincia_0107,"UTCUBAMBA","0107",departamento_01
+provincia_0201,"HUARAZ","0201",departamento_02
+provincia_0202,"AIJA","0202",departamento_02
+provincia_0203,"BOLOGNESI","0203",departamento_02
+provincia_0204,"CARHUAZ","0204",departamento_02
+provincia_0205,"CASMA","0205",departamento_02
+provincia_0206,"CORONGO","0206",departamento_02
+provincia_0207,"HUAYLAS","0207",departamento_02
+provincia_0208,"HUARI","0208",departamento_02
+provincia_0209,"MARISCAL LUZURIAGA","0209",departamento_02
+provincia_0210,"PALLASCA","0210",departamento_02
+provincia_0211,"POMABAMBA","0211",departamento_02
+provincia_0212,"RECUAY","0212",departamento_02
+provincia_0213,"SANTA","0213",departamento_02
+provincia_0214,"SIHUAS","0214",departamento_02
+provincia_0215,"YUNGAY","0215",departamento_02
+provincia_0216,"ANTONIO RAIMONDI","0216",departamento_02
+provincia_0217,"CARLOS FERMIN FITZCARRALD","0217",departamento_02
+provincia_0218,"ASUNCION","0218",departamento_02
+provincia_0219,"HUARMEY","0219",departamento_02
+provincia_0220,"OCROS","0220",departamento_02
+provincia_0301,"ABANCAY","0301",departamento_03
+provincia_0302,"AYMARAES","0302",departamento_03
+provincia_0303,"ANDAHUAYLAS","0303",departamento_03
+provincia_0304,"ANTABAMBA","0304",departamento_03
+provincia_0305,"COTABAMBAS","0305",departamento_03
+provincia_0306,"GRAU","0306",departamento_03
+provincia_0307,"CHINCHEROS","0307",departamento_03
+provincia_0401,"AREQUIPA","0401",departamento_04
+provincia_0402,"CAYLLOMA","0402",departamento_04
+provincia_0403,"CAMANA","0403",departamento_04
+provincia_0404,"CARAVELI","0404",departamento_04
+provincia_0405,"CASTILLA","0405",departamento_04
+provincia_0406,"CONDESUYOS","0406",departamento_04
+provincia_0407,"ISLAY","0407",departamento_04
+provincia_0408,"LA UNION","0408",departamento_04
+provincia_0501,"HUAMANGA","0501",departamento_05
+provincia_0502,"CANGALLO","0502",departamento_05
+provincia_0503,"HUANTA","0503",departamento_05
+provincia_0504,"LA MAR","0504",departamento_05
+provincia_0505,"LUCANAS","0505",departamento_05
+provincia_0506,"PARINACOCHAS","0506",departamento_05
+provincia_0507,"VICTOR FAJARDO","0507",departamento_05
+provincia_0508,"HUANCA SANCOS","0508",departamento_05
+provincia_0509,"VILCAS HUAMAN","0509",departamento_05
+provincia_0510,"PAUCAR DEL SARA SARA","0510",departamento_05
+provincia_0511,"SUCRE","0511",departamento_05
+provincia_0601,"CAJAMARCA","0601",departamento_06
+provincia_0602,"CAJABAMBA","0602",departamento_06
+provincia_0603,"CELENDIN","0603",departamento_06
+provincia_0604,"CONTUMAZA","0604",departamento_06
+provincia_0605,"CUTERVO","0605",departamento_06
+provincia_0606,"CHOTA","0606",departamento_06
+provincia_0607,"HUALGAYOC","0607",departamento_06
+provincia_0608,"JAEN","0608",departamento_06
+provincia_0609,"SANTA CRUZ","0609",departamento_06
+provincia_0610,"SAN MIGUEL","0610",departamento_06
+provincia_0611,"SAN IGNACIO","0611",departamento_06
+provincia_0612,"SAN MARCOS","0612",departamento_06
+provincia_0613,"SAN PABLO","0613",departamento_06
+provincia_0701,"CUSCO","0701",departamento_07
+provincia_0702,"ACOMAYO","0702",departamento_07
+provincia_0703,"ANTA","0703",departamento_07
+provincia_0704,"CALCA","0704",departamento_07
+provincia_0705,"CANAS","0705",departamento_07
+provincia_0706,"CANCHIS","0706",departamento_07
+provincia_0707,"CHUMBIVILCAS","0707",departamento_07
+provincia_0708,"ESPINAR","0708",departamento_07
+provincia_0709,"LA CONVENCION","0709",departamento_07
+provincia_0710,"PARURO","0710",departamento_07
+provincia_0711,"PAUCARTAMBO","0711",departamento_07
+provincia_0712,"QUISPICANCHIS","0712",departamento_07
+provincia_0713,"URUBAMBA","0713",departamento_07
+provincia_0801,"HUANCAVELICA","0801",departamento_08
+provincia_0802,"ACOBAMBA","0802",departamento_08
+provincia_0803,"ANGARAES","0803",departamento_08
+provincia_0804,"CASTROVIRREYNA","0804",departamento_08
+provincia_0805,"TAYACAJA","0805",departamento_08
+provincia_0806,"HUAYTARA","0806",departamento_08
+provincia_0807,"CHURCAMPA","0807",departamento_08
+provincia_0901,"HUANUCO","0901",departamento_09
+provincia_0902,"AMBO","0902",departamento_09
+provincia_0903,"DOS DE MAYO","0903",departamento_09
+provincia_0904,"HUAMALIES","0904",departamento_09
+provincia_0905,"MARANON","0905",departamento_09
+provincia_0906,"LEONCIO PRADO","0906",departamento_09
+provincia_0907,"PACHITEA","0907",departamento_09
+provincia_0908,"PUERTO INCA","0908",departamento_09
+provincia_0909,"HUACAYBAMBA","0909",departamento_09
+provincia_0910,"LAURICOCHA","0910",departamento_09
+provincia_0911,"YAROWILCA","0911",departamento_09
+provincia_1001,"ICA","1001",departamento_10
+provincia_1002,"CHINCHA","1002",departamento_10
+provincia_1003,"NAZCA","1003",departamento_10
+provincia_1004,"PISCO","1004",departamento_10
+provincia_1005,"PALPA","1005",departamento_10
+provincia_1101,"HUANCAYO","1101",departamento_11
+provincia_1102,"CONCEPCION","1102",departamento_11
+provincia_1103,"JAUJA","1103",departamento_11
+provincia_1104,"JUNIN","1104",departamento_11
+provincia_1105,"TARMA","1105",departamento_11
+provincia_1106,"YAULI","1106",departamento_11
+provincia_1107,"SATIPO","1107",departamento_11
+provincia_1108,"CHANCHAMAYO","1108",departamento_11
+provincia_1109,"CHUPACA","1109",departamento_11
+provincia_1201,"TRUJILLO","1201",departamento_12
+provincia_1202,"BOLIVAR","1202",departamento_12
+provincia_1203,"SANCHEZ CARRION","1203",departamento_12
+provincia_1204,"OTUZCO","1204",departamento_12
+provincia_1205,"PACASMAYO","1205",departamento_12
+provincia_1206,"PATAZ","1206",departamento_12
+provincia_1207,"SANTIAGO DE CHUCO","1207",departamento_12
+provincia_1208,"ASCOPE","1208",departamento_12
+provincia_1209,"CHEPEN","1209",departamento_12
+provincia_1210,"JULCAN","1210",departamento_12
+provincia_1211,"GRAN CHIMU","1211",departamento_12
+provincia_1212,"VIRU","1212",departamento_12
+provincia_1301,"CHICLAYO","1301",departamento_13
+provincia_1302,"FERRENAFE","1302",departamento_13
+provincia_1303,"LAMBAYEQUE","1303",departamento_13
+provincia_1401,"LIMA","1401",departamento_14
+provincia_1402,"CAJATAMBO","1402",departamento_14
+provincia_1403,"CANTA","1403",departamento_14
+provincia_1404,"CANETE","1404",departamento_14
+provincia_1405,"HUAURA","1405",departamento_14
+provincia_1406,"HUAROCHIRI","1406",departamento_14
+provincia_1407,"YAUYOS","1407",departamento_14
+provincia_1408,"HUARAL","1408",departamento_14
+provincia_1409,"BARRANCA","1409",departamento_14
+provincia_1410,"OYON","1410",departamento_14
+provincia_1501,"MAYNAS","1501",departamento_15
+provincia_1502,"ALTO AMAZONAS","1502",departamento_15
+provincia_1503,"LORETO","1503",departamento_15
+provincia_1504,"REQUENA","1504",departamento_15
+provincia_1505,"UCAYALI","1505",departamento_15
+provincia_1506,"MARISCAL RAMON CASTILLA","1506",departamento_15
+provincia_1507,"DATEM DEL MARANON","1507",departamento_15
+provincia_1601,"TAMBOPATA","1601",departamento_16
+provincia_1602,"MANU","1602",departamento_16
+provincia_1603,"TAHUAMANU","1603",departamento_16
+provincia_1701,"MARISCAL NIETO","1701",departamento_17
+provincia_1702,"GENERAL SANCHEZ CERRO","1702",departamento_17
+provincia_1703,"ILO","1703",departamento_17
+provincia_1801,"PASCO","1801",departamento_18
+provincia_1802,"DANIEL ALCIDES CARRION","1802",departamento_18
+provincia_1803,"OXAPAMPA","1803",departamento_18
+provincia_1901,"PIURA","1901",departamento_19
+provincia_1902,"AYABACA","1902",departamento_19
+provincia_1903,"HUANCABAMBA","1903",departamento_19
+provincia_1904,"MORROPON","1904",departamento_19
+provincia_1905,"PAITA","1905",departamento_19
+provincia_1906,"SULLANA","1906",departamento_19
+provincia_1907,"TALARA","1907",departamento_19
+provincia_1908,"SECHURA","1908",departamento_19
+provincia_2001,"PUNO","2001",departamento_20
+provincia_2002,"AZANGARO","2002",departamento_20
+provincia_2003,"CARABAYA","2003",departamento_20
+provincia_2004,"CHUCUITO","2004",departamento_20
+provincia_2005,"HUANCANE","2005",departamento_20
+provincia_2006,"LAMPA","2006",departamento_20
+provincia_2007,"MELGAR","2007",departamento_20
+provincia_2008,"SANDIA","2008",departamento_20
+provincia_2009,"SAN ROMAN","2009",departamento_20
+provincia_2010,"YUNGUYO","2010",departamento_20
+provincia_2011,"SAN ANTONIO DE PUTINA","2011",departamento_20
+provincia_2012,"EL COLLAO","2012",departamento_20
+provincia_2013,"MOHO","2013",departamento_20
+provincia_2101,"MOYOBAMBA","2101",departamento_21
+provincia_2102,"HUALLAGA","2102",departamento_21
+provincia_2103,"LAMAS","2103",departamento_21
+provincia_2104,"MARISCAL CACERES","2104",departamento_21
+provincia_2105,"RIOJA","2105",departamento_21
+provincia_2106,"SAN MARTIN","2106",departamento_21
+provincia_2107,"BELLAVISTA","2107",departamento_21
+provincia_2108,"TOCACHE","2108",departamento_21
+provincia_2109,"PICOTA","2109",departamento_21
+provincia_2110,"EL DORADO","2110",departamento_21
+provincia_2201,"TACNA","2201",departamento_22
+provincia_2202,"TARATA","2202",departamento_22
+provincia_2203,"JORGE BASADRE","2203",departamento_22
+provincia_2204,"CANDARAVE","2204",departamento_22
+provincia_2301,"TUMBES","2301",departamento_23
+provincia_2302,"CONTRALMIRANTE VILLAR","2302",departamento_23
+provincia_2303,"ZARUMILLA","2303",departamento_23
+provincia_2401,"CALLAO","2401",departamento_24
+provincia_2501,"CORONEL PORTILLO","2501",departamento_25
+provincia_2502,"PADRE ABAD","2502",departamento_25
+provincia_2503,"ATALAYA","2503",departamento_25
+provincia_2504,"PURUS","2504",departamento_25
+provincia_2504,"PURUS","2504",departamento_25
+
+

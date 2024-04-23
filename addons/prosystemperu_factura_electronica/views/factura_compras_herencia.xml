@@ -1,0 +1,39 @@
+<odoo>
+  <data>
+    <!--<record id="ver_factura_compras_herencia_tree" model="ir.ui.view">
+      <field name="name">factura.herencia.tree</field>
+      <field name="model">account.invoice</field>
+      <field name="inherit_id" ref="account.invoice_supplier_tree "/>
+        <field name="arch" type="xml">
+          <field name="number" position="after">
+                <field name="tip_doc_compra" string="Tip. Doc"/>
+                <field name="serie"  string="Serie"/>
+                <field name="numeracion_tree" string="Número"/>
+                <field name="numeracion" string="Número" invisible="1"/>
+          </field>         
+          
+        </field>
+    </record>-->
+
+    <record id="ver_factura_compras_herencia_form" model="ir.ui.view">
+        <field name="name">factura.herencia.form</field>
+        <field name="model">account.invoice</field>
+        <field name="inherit_id" ref="account.invoice_supplier_form"/>
+        <field name="arch" type="xml">
+          <field name="reference" position="after">            
+            <field name="tip_doc_compra"  string="Tip. Doc"/>
+            <field name="serie_compra"  string="Serie"/>
+            <field name="numeracion_compra" string="Número"/>
+          </field>
+
+          <field name="reference" position="attributes">
+            <attribute name="invisible">1</attribute>
+          </field>
+          
+                   
+        </field>
+    </record>
+
+
+  </data>
+</odoo>
